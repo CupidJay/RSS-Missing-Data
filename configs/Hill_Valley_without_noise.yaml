@@ -1,0 +1,29 @@
+DATASETS:
+    NAME: "Hill_Valley_without_noise"
+    CLASS: 2
+
+MODEL:
+    META_ARCHITECTURE: "UciNet"
+    DH: 3
+    DW: 3
+    N_MUL: 10
+    DD: 100
+    N_PER_GROUP: 1
+
+    FC:
+        N_FC: 256
+        B_FC: True
+
+SOLVER:
+    NUM_ROUNDS: 5
+    MAX_EPOCHS: 50
+    TRAIN_PER_BATCH: 128
+    TEST_PER_BATCH: 128
+    LR: 1e-3
+    LR_SCHEDULER_ON: False
+    WEIGHT_DECAY: 1e-4
+    OPTIMIZER: Adam
+
+OUTPUT_DIR:
+    "Results/uci/Hill_Valley_without_noises"
+

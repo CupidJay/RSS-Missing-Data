@@ -1,0 +1,37 @@
+DATASETS:
+    NAME: "cub200"
+    CLASS: 200
+
+MODEL:
+    META_ARCHITECTURE: "TestModel"
+    #WEIGHTS: "../wu_code/models/vgg16_epoch67.pth"
+    WEIGHTS: "Results/VGGSpeed/vgg16_epoch60.pth"
+    DH: 5
+    DW: 5
+    N_MUL: 6
+    #DD: 50176
+    #DD: 100352
+    DD: 512
+    N_PER_GROUP: 64
+
+    FC:
+      N_FC: 1024
+      B_FC: True
+
+SOLVER:
+    NUM_ROUNDS: 1
+    MAX_EPOCHS: 90
+    TRAIN_PER_BATCH: 64
+    TEST_PER_BACTH: 64
+    LR: 5e-6
+    LR_SCHEDULER_ON: True
+    LR_SCHEDULER_MILESTONE: [30, 60]
+    WEIGHT_DECAY: 1e-4
+
+LOG_EPOCHS: 1
+
+OUTPUT_DIR:
+    "Results/Test/VGG_AVG/"
+
+
+
